@@ -1,0 +1,48 @@
+import random
+"""
+un peu de chat gpt
+"""
+questions = {
+    "Quelle est la formule pour calculer la densité ?": "Densité = Masse / Volume",
+    "Quelle est l'unité de pression ?": "Pascal",
+    "De quelle couleur est la solution de diiode?": "Orange/Marron",
+    "Quelle est la formule pour calculer l'énergie cinétique ?": "EC = 0.5 * m * v^2",
+    "Quelle est la formule de l'eau ?": "H2O",
+    "Quel élément chimique a le symbole 'Fe' ?": "Fer",
+    "Combien d'atomes de carbone y a-t-il dans une molécule de glucose (C6H12O6) ?": "6",
+    "Quelle est la formule chimique du dioxyde de carbone ?": "CO2"
+}
+
+def poser_question():
+    question = random.choice(list(questions.keys()))
+    print(question)
+    reponse = input("Quelle est votre réponse : ").strip().lower()
+
+    if reponse == questions[question].lower():
+        print("Bonne réponse !\n")
+        return True
+    else:
+        print("Mauvaise réponse. La bonne réponse est :", questions[question], "\n")
+        return False
+
+def principal():
+    print("Bienvenue dans ce quiz de Physique Chimie !\n")
+    print("Répondez aux questions suivantes pour tester vos connaissances et savoir si vous pouvez passez le baccalauréat de physique-chimie.\n")
+    
+    score = 0
+    num_questions = 8
+
+    for _ in range(num_questions):
+        if poser_question():
+            score += 1
+    
+    print("Quiz terminé !")
+    print("Vous avez obtenu {}/{}.".format(score, num_questions))
+    if score == num_questions:
+        print("Félicitations ! Vous êtes éligible pour le baccalauréat.")
+    else:
+        print("Vous devez obtenir un score parfait pour savoir si vous pouvez passez le baccalauréat de physique-chimie.")
+    print("Merci d'avoir joué !")
+
+    principal()
+    
