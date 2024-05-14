@@ -1,0 +1,65 @@
+from random import randint,choice
+"""
+le code vient du site: https://nsi.xyz/projets/jeu-du-pendu-code-en-python/
+"""
+
+def initialisation(): 
+    liste_mots=["chocolat", "tentacule", "dictionnaire", "magnifique", "saucisson", "xylophone", "serveur", "houx", "clavier"]
+    choix = choice(liste_mots) 
+    myst = ""
+    for i in choix:
+        myst += "_"
+    return (choix,myst)
+
+def verification(lettre,mot): 
+    if lettre in mot:
+        return True
+    else:
+        return False
+
+def mot_complet(mot):
+    if "_" not in mot:
+        return True
+    else:
+        return False
+
+def complete_mot(lettre,mot,myst):
+    for i in range(len(mot)):
+        if mot[i] == lettre:
+            temp = list(myst) 
+            temp[i] = lettre 
+            myst = "".join(temp)
+    return myst 
+
+  
+def jeu():
+    tentatives = 10
+    mot_choisi,mot_cache = initialisation()
+    while (tentatives > 0) and (not mot_complet(mot_cache)):
+        print("\nNombre de tentatives restantes :\t", tentatives, "\n")
+        print(" ".join(mot_cache),"\n\n")
+        lettre_choisie = input("Choisir une lettre (en minuscule) :\t")
+        if verification(lettre_choisie,mot_choisi):
+            mot_cache = complete_mot(lettre_choisie, mot_choisi, mot_cache)
+            print("\nLa lettre se trouve bien dans le mot\n")
+        else:
+            tentatives -= 1
+            print("\nLa lettre ne se trouve pas dans le mot...\n\n","\n\n")
+    if tentatives == 0:
+        print(" ".join(mot_cache))
+        print("\nLe mot était :\n")
+        print(" ".join(mot_choisi))
+        print("\nVous avez malheureusement échoué ... \n")
+    if "_" not in mot_cache:
+        print(" ".join(mot_cache),"\n\n")
+        print("\nBravo, vous avez gagné !\n")
+    input("\nVeuillez taper sur la touche Entrer pour recommencer\n\n")
+    menu()    
+        
+def menu():
+    print("\n-----------BIENVENUE SUR LE JEU DU PENDU-----------\n")
+    print("-------------------BONNE CHANCE--------------------\n\n")
+    print("C'EST PARTI! \n")
+    jeu()
+
+menu()
