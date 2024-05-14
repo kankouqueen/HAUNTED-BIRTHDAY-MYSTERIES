@@ -1,0 +1,486 @@
+import random 
+import datetime as dt
+
+def debut():
+    print("Bienvenue dans Haunted Birthday Mysteries")
+    print()
+
+def maison():
+    prenom = input("Comment t'appelles tu? ")
+    print(f"Joyeux anniversaire {prenom}!\nTu as beaucoup de chose à faire aujourd'hui.")
+    
+    print("Tes ami.e.s arrivent à 18h!\nPar quoi veux-tu commencer? ")
+    reponse = input("Faire à manger ou Préparer les activités? ")
+        
+    for i in range(2):
+        if reponse == 'Faire à manger':
+            print("Tu as finis de faire à manger.")
+            reponse = 'Préparer les activités'
+#ELIF VA PAS SERVIR EN HTML
+#Mettre deux boutons
+        else:
+            print("Tu as fini de préparer les activités.")
+            reponse = 'Faire à manger'
+    
+def telephone():
+    date = dt.date.today()
+    heure = "19:30"
+    print("Tu decides d'allumer ton téléphone et de regarder l'heure car tes ami.e.s ne sont toujours pas là.")
+    print(f"{date}")
+    print()
+    print(f"{heure}")
+    print()
+    
+def sport():
+# Cliquer sur la clé pour lancer le dialogue
+    print("Tu remarques quelque chose de brillant en haut du panier de basket. Il s'agit d'une clé.")
+# Cliquer sur le panier de basket pour lancer le dialogue    
+    print("Tu trouves un ballon au pied du panier. Tu décides de le prendre.")
+    panier = False
+    print("Tu te prépares à lancer...")
+    print()
+    lancer = random.randint(1,4)
+    
+    while panier == False:
+        if lancer == 1:
+            print("Tu te félicites d'avoir fait tomber la clé.")
+            panier = True
+        else:
+            print("Tu as loupé ton lancer. Tu décides de recommencer.")
+            lancer = random.randint(1,4)
+            print("Tu te prépares à lancer...")
+            print() 
+    
+"""
+# ne peut etre utilise que dans le html
+def cle():        
+    if cle == True:
+        print("Le cadenas est dévérouillé.")
+    else:
+        print("Tu dois trouver la clé d'abord!")
+"""
+
+debut()
+maison()
+telephone()
+sport()
+
+
+
+--------------------------------------
+
+
+
+import random 
+import datetime as dt
+
+prenom = input("Comment t'appelles tu?\n>")
+print(f"Bienvenue dans Haunted Birthday Mysteries {prenom}")
+print()
+
+def maison():
+    print("Aujourd'hui tu fêtes ton anniversaire.\nTu as beaucoup de chose à faire!")
+    print("Tes ami.e.s arrivent à 18h!\nEn attendant, tu dois 'Faire à manger' et 'Préparer les activités'.")
+    reponse = input("Tu commences par...\n> ")
+    n = 1
+
+    for i in range(n):
+        if reponse == 'Faire à manger':
+            print("Tu as finis de faire à manger.\nMaintenant, tu prépares les activités.")
+            n -= 1
+            
+        elif reponse == 'Préparer les activités':
+            print("Tu as finis de préparer les activités.\nMaintenant tu fais à manger.")
+            n -= 1
+            
+        else: 
+            print("Ce n'est pas un choix de réponse possible.\nMerci de répondre avec 'Faire à manger' ou 'Préparer les activités'.")
+            reponse = input("Tu commences par...\n> ")   
+            n += 1
+
+    print()
+    print("Tu as enfin finis. Tes ami.e.s ne devraient plus tarder à arriver.")
+
+def telephone():
+    print("Tu commences à t'impatienter et tu décides de regarder l'heure.")
+    date = dt.date.today()
+    print(f"{date}")
+    print("19:34")
+    message = input("Tu reçois un message, veux-tu le lire?\n>")
+
+    if message == 'Oui':
+        print("de:   Numéro inconnu")
+        print(f"Cher.e {prenom}, je te souhaite un joyeux anniversaire. Tu as du remarquer qu'il manque cependant quelque chose... Tes invité.e.s.")
+    
+def sport():
+    print("Tu remarques quelque chose de brillant en haut du panier de basket. Il s'agit d'une clé.")
+    print("Tu trouves un ballon au pied du panier. Tu décides de le prendre.")
+    panier = False
+    print("Tu te prépares à lancer...")
+    print()
+    lancer = random.randint(1,4)
+    
+    while panier == False:
+        if lancer == 1:
+            print("Tu te félicites d'avoir fait tomber la clé.")
+            panier = True
+        else:
+            print("Tu as loupé ton lancer. Tu décides de recommencer.")
+            lancer = random.randint(1,4)
+            print("Tu te prépares à lancer...")
+            print() 
+    
+
+maison()
+
+--------------------------------------------
+
+
+import random 
+
+prenom = input("Comment t'appelles tu?\n>")
+print(f"Bienvenue dans Haunted Birthday Mysteries {prenom}")
+print()
+
+def maison():
+    print("Aujourd'hui tu fêtes ton anniversaire.\nTu as beaucoup de chose à faire!")
+    print("Tes ami.e.s arrivent à 18h!\nEn attendant, tu dois 'Faire à manger' et 'Préparer les activités'.")
+    reponse = input("Tu commences par...\n> ")
+    n = 1
+
+    for i in range(n):
+        if reponse == 'Faire à manger':
+            print("Tu as finis de faire à manger.\nMaintenant, tu prépares les activités.")
+            n -= 1
+            
+        elif reponse == 'Préparer les activités':
+            print("Tu as finis de préparer les activités.\nMaintenant tu fais à manger.")
+            n -= 1
+            
+        else: 
+            print("Ce n'est pas un choix de réponse possible.\nMerci de répondre avec 'Faire à manger' ou 'Préparer les activités'.")
+            reponse = input("Tu commences par...\n> ")   
+            n += 1
+
+    print()
+    print("Tu as enfin fini. Tes ami.e.s ne devraient plus tarder à arriver.")
+
+def telephone():
+    print("Tu commences à t'impatienter et tu décides de regarder l'heure.")
+    adresse = 'Bd de Parc, 77700 Coupvray'
+    print("19:34")
+    message = input("Tu reçois un message, veux-tu le lire?\n>")
+
+    if message == 'Oui' or message == 'oui':
+        print("de:   Numéro inconnu")
+        print(f"Cher.e {prenom}, je te souhaite un joyeux anniversaire.\nTu as dû remarquer qu'il manque cependant quelque chose... Tes invité.e.s.")
+        print("Si tu veux espérer les retrouver, il te suffit d'aller à l'adresse indiquée ci-dessous, ou alors, tu peux les laisser tomber.")
+        print(f"{adresse}\nA toi de choisir.")
+
+    else:
+        print(f"Tes ami.e.s ont été kidnappé.e.s! Tu dois te rendre au {adresse} pour les sauver.")
+
+    print("Tu ne peux laisser tomber tes ami.e.s. Tu prends ton téléphone et ton manteau et tu te diriges vers l'adresse indiquée.")
+
+def manoir():
+    print("Tu arrives, après quelque temps, devant un manoir. Tu entres à l'intérieur de celui-ci et atteris dans le hall. ")
+    note = input("Tu trouves une note sur le sol, veux-tu la lire?\n>")
+
+    if note == 'Oui' or note == 'oui':
+        print("La note t'indique qu'il y a une porte avec trois cadenas dans la pièce adjacente et qu'ils ne peuvent être dévérouillé qu'avec des clés speciales.")
+
+    salle = input("Veux-tu aller dans 'Le jardin', 'L'auditaurium', 'Le salon d'amis', ou voir 'Les cadenas'?")
+
+def jardin()):
+    print("Tu remarques quelque chose de brillant en haut du panier de basket. Il s'agit d'une clé.")
+    print("Tu trouves un ballon au pied du panier. Tu décides de le prendre.")
+    panier = False
+    print("Tu te prépares à lancer...")
+    print()
+    lancer = random.randint(1,4)
+    
+    while panier == False:
+        if lancer == 1:
+            print("Tu te félicites d'avoir fait tomber la clé.")
+            panier = True
+        else:
+            print("Tu as loupé ton lancer. Tu décides de recommencer.")
+            lancer = random.randint(1,4)
+            print("Tu te prépares à lancer...")
+            print() 
+    
+
+maison()
+telephone()
+manoir()
+
+-----------------------------
+
+
+import random 
+from unidecode import unidecode
+
+prenom = input("Comment t'appelles tu?\n>")
+print(f"Bienvenue dans Haunted Birthday Mysteries {prenom}")
+print()
+cle = 0
+
+def maison():
+    print("Aujourd'hui tu fêtes ton anniversaire.\nTu as beaucoup de chose à faire!")
+    print("Tes ami.e.s arrivent à 18h!\nEn attendant, tu dois 'Faire à manger' et 'Préparer les activités'.")
+    reponse = input("Tu commences par...\n> ")
+    n = 1
+
+    for i in range(n):
+        if reponse == 'Faire à manger':
+            print("Tu as finis de faire à manger.\nMaintenant, tu prépares les activités.")
+            n -= 1
+            
+        elif reponse == 'Préparer les activités':
+            print("Tu as finis de préparer les activités.\nMaintenant tu fais à manger.")
+            n -= 1
+            
+        else: 
+            print("Ce n'est pas un choix de réponse possible.\nMerci de répondre avec 'Faire à manger' ou 'Préparer les activités'.")
+            reponse = input("Tu commences par...\n> ")   
+            n += 1
+
+    print()
+    print("Tu as enfin fini. Tes ami.e.s ne devraient plus tarder à arriver.")
+
+def telephone():
+    print("Tu commences à t'impatienter et tu décides de regarder l'heure.")
+    adresse = 'Bd de Parc, 77700 Coupvray'
+    print("19:34")
+    message = input("Tu reçois un message, veux-tu le lire?\n>")
+
+    if message == 'Oui' or message == 'oui':
+        print("de:   Numéro inconnu")
+        print(f"Cher.e {prenom}, je te souhaite un joyeux anniversaire.\nTu as dû remarquer qu'il manque cependant quelque chose... Tes invité.e.s.")
+        print("Si tu veux espérer les retrouver, il te suffit d'aller à l'adresse indiquée ci-dessous, ou alors, tu peux les laisser tomber.")
+        print(f"{adresse}\nA toi de choisir.")
+
+    else:
+        print(f"Tes ami.e.s ont été kidnappé.e.s! Tu dois te rendre au {adresse} pour les sauver.")
+
+    print("Tu ne peux laisser tomber tes ami.e.s. Tu prends ton téléphone et ton manteau et tu te diriges vers l'adresse indiquée.")
+
+def manoir():
+    print("Tu arrives, après quelque temps, devant un manoir. Tu entres à l'intérieur de celui-ci et atteris dans le hall. ")
+    print("Tu trouves une note sur le sol. Tu la récupères et la lis.")
+    print("Elle t'indique qu'il y a une porte avec trois cadenas dans la pièce adjacente et qu'ils ne peuvent être dévérouillé qu'avec des clés speciales.")
+    print("Tu vas voir dans cette fameuse pièce et tu découvres des mots sur les cadenas, chacun correspondant à des salles.")
+
+def salles():
+    salle = input("Veux-tu aller dans 'Le jardin', 'L'auditaurium', 'Le salon', ou voir 'Les cadenas'?")
+
+    while clé != 3:
+        if salle == 'Le jardin':
+            jardin()
+            salle = input("Veux-tu aller dans 'L'auditaurium', 'Le salon', ou voir 'Les cadenas'?")    
+    
+        elif salle == "L'auditaurium":
+            auditaurium()
+            salle = input("Veux-tu aller dans 'Le jardin', 'Le salon', ou voir 'Les cadenas'?")       
+
+        elif salle == 'Le salon':
+            salon()
+            salle = input("Veux-tu aller dans 'Le jardin', 'L'auditaurium', ou voir 'Les cadenas'?")
+        
+        else:
+             salle = input("Veux-tu aller dans 'Le jardin', 'L'auditaurium', 'Le salon', ou voir 'Les cadenas'?")
+
+def jardin():
+    print("Tu vas dans le jardin et tu remarques quelque chose de brillant en haut d'un panier de basket. Il s'agit d'une clé.")
+    print("Tu trouves un ballon au pied du panier. Tu décides de le prendre pour faire tomber la clé.")
+    panier = False
+    print("Tu te prépares à lancer...")
+    print()
+    lancer = random.randint(1,4)
+    
+    while panier == False:
+        if lancer == 1:
+            print("Tu te félicites d'avoir fait tomber la clé.")
+            panier = True
+        else:
+            print("Tu as loupé ton lancer. Tu décides de recommencer.")
+            lancer = random.randint(1,4)
+            print("Tu te prépares à lancer...")
+            print() 
+    
+def salon():
+    
+
+def auditaurium():
+    
+
+def fin():
+    if cle == 3:
+        print("Tu dévérouilles les cadenas un par un.\nTu ouvres la porte... Et tu voies... Tes ami.e.s!")
+        print("Tout le monde te félicite d'avoir réussi à récupérer les clés et ")
+    
+maison()
+telephone()
+manoir()
+salles()
+
+
+--------------------------------
+
+
+import random 
+from unidecode import unidecode
+
+prenom = input("Comment t'appelles tu?\n>")
+print(f"Bienvenue dans Haunted Birthday Mysteries {prenom}")
+print()
+cle = 0
+
+def maison():
+    print("Aujourd'hui tu fêtes ton anniversaire.\nTu as beaucoup de chose à faire!")
+    print("Tes ami.e.s arrivent à 18h!\nEn attendant, tu dois 'Faire à manger' et 'Préparer les activités'.")
+    reponse = input("Tu commences par...\n> ")
+    n = 1
+
+    for i in range(n):
+        if reponse == 'Faire à manger':
+            print("Tu as finis de faire à manger.\nMaintenant, tu prépares les activités.")
+            n -= 1
+            
+        elif reponse == 'Préparer les activités':
+            print("Tu as finis de préparer les activités.\nMaintenant tu fais à manger.")
+            n -= 1
+            
+        else: 
+            print("Ce n'est pas un choix de réponse possible.\nMerci de répondre avec 'Faire à manger' ou 'Préparer les activités'.")
+            reponse = input("Tu commences par...\n> ")   
+            n += 1
+
+    print()
+    print("Tu as enfin fini. Tes ami.e.s ne devraient plus tarder à arriver.")
+
+def telephone():
+    print("Tu commences à t'impatienter et tu décides de regarder l'heure.")
+    adresse = 'Bd de Parc, 77700 Coupvray'
+    print("19:34")
+    message = input("Tu reçois un message, veux-tu le lire?\n>")
+
+    if message == 'Oui' or message == 'oui':
+        print("de:   Numéro inconnu")
+        print(f"Cher.e {prenom}, je te souhaite un joyeux anniversaire.\nTu as dû remarquer qu'il manque cependant quelque chose... Tes invité.e.s.")
+        print("Si tu veux espérer les retrouver, il te suffit d'aller à l'adresse indiquée ci-dessous, ou alors, tu peux les laisser tomber.")
+        print(f"{adresse}\nA toi de choisir.")
+
+    else:
+        print(f"Tes ami.e.s ont été kidnappé.e.s! Tu dois te rendre au {adresse} pour les sauver.")
+
+    print("Tu ne peux laisser tomber tes ami.e.s. Tu prends ton téléphone et ton manteau et tu te diriges vers l'adresse indiquée.")
+
+def manoir():
+    print("Tu arrives, après quelque temps, devant un manoir. Tu entres à l'intérieur de celui-ci et atteris dans le hall. ")
+    print("Tu trouves une note sur le sol. Tu la récupères et la lis.")
+    print("Elle t'indique qu'il y a une porte avec trois cadenas dans la pièce adjacente et qu'ils ne peuvent être dévérouillé qu'avec des clés speciales.")
+    print("Tu vas voir dans cette fameuse pièce et tu découvres des mots sur les cadenas, chacun correspondant à des salles.")
+
+def salles():
+    salle = input("Veux-tu aller dans 'Le jardin', 'L'auditorium', 'Le salon', ou voir 'Les cadenas'?")
+
+    while clé != 3:
+        if salle == 'Le jardin':
+            jardin()
+            salle = input("Veux-tu aller dans 'L'auditorium', 'Le salon', ou voir 'Les cadenas'?")    
+    
+        elif salle == "L'auditaurium":
+            auditorium()
+            salle = input("Veux-tu aller dans 'Le jardin', 'Le salon', ou voir 'Les cadenas'?")       
+
+        elif salle == 'Le salon':
+            salon()
+            salle = input("Veux-tu aller dans 'Le jardin', 'L'auditorium', ou voir 'Les cadenas'?")
+        
+        else:
+             salle = input("Veux-tu aller dans 'Le jardin', 'L'auditorium', 'Le salon', ou voir 'Les cadenas'?")
+
+def jardin():
+    print("Tu vas dans le jardin et tu remarques quelque chose de brillant en haut d'un panier de basket. Il s'agit d'une clé.")
+    print("Tu trouves un ballon au pied du panier. Tu décides de le prendre pour faire tomber la clé.")
+    panier = False
+    print("Tu te prépares à lancer...")
+    print()
+    lancer = random.randint(1,4)
+    
+    while panier == False:
+        if lancer == 1:
+            print("Tu te félicites d'avoir fait tomber la clé.")
+            panier = True
+        else:
+            print("Tu as loupé ton lancer. Tu décides de recommencer.")
+            lancer = random.randint(1,4)
+            print("Tu te prépares à lancer...")
+            print() 
+    
+def salon():
+    
+
+def auditorium():
+    print("Tu arrives dans l'auditorium")
+
+def fin():
+    if cle == 3:
+        print("Tu dévérouilles les cadenas un par un.\nTu ouvres la porte... Et tu voies... Tes ami.e.s!")
+        print("Tout le monde te félicite d'avoir réussi à récupérer les clés et vous decidez de rentrer chez toi.")
+    
+    
+    
+maison()
+telephone()
+manoir()
+salles()
+--------------------------------
+
+
+import random
+
+questions = {
+    "Quelle est la formule pour calculer la densité ?": "Densité = Masse / Volume",
+    "Quelle est l'unité de pression ?": "Pascal",
+    "De quelle couleur est la solution de diiode?": "Orange/Marron",
+    "Quelle est la formule pour calculer l'énergie cinétique ?": "EC = 0.5 * m * v^2",
+    "Quelle est la formule de l'eau ?": "H2O",
+    "Quel élément chimique a le symbole 'Fe' ?": "Fer",
+    "Combien d'atomes de carbone y a-t-il dans une molécule de glucose (C6H12O6) ?": "6",
+    "Quelle est la formule chimique du dioxyde de carbone ?": "CO2"
+}
+
+def poser_question():
+    question = random.choice(list(questions.keys()))
+    print(question)
+    reponse = input("Quelle est votre réponse : ").strip().lower()
+
+    if reponse == questions[question].lower():
+        print("Bonne réponse !\n")
+        return True
+    else:
+        print("Mauvaise réponse. La bonne réponse est :", questions[question], "\n")
+        return False
+
+def principal():
+    print("Bienvenue dans ce quiz de Physique Chimie !\n")
+    print("Répondez aux questions suivantes pour tester vos connaissances et savoir si vous pouvez passez le baccalauréat de physique-chimie.\n")
+    
+    score = 0
+    num_questions = 8
+
+    for _ in range(num_questions):
+        if poser_question():
+            score += 1
+    
+    print("Quiz terminé !")
+    print("Vous avez obtenu {}/{}.".format(score, num_questions))
+    if score == num_questions:
+        print("Félicitations ! Vous êtes éligible pour le baccalauréat.")
+    else:
+        print("Vous devez obtenir un score parfait pour savoir si vous pouvez passez le baccalauréat de physique-chimie.")
+    print("Merci d'avoir joué !")
+
+    principal()
